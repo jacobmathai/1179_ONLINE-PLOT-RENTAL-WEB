@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Untitled Document</title>
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+        <script type="text/javascript">
+            function getAddress() {
+                var geocoder = new google.maps.Geocoder();
+                var address = document.getElementById('txt_location').value;
+                //var address = "Kumbhappilli, Thiruvaniyoor, Kerala, India";
+                geocoder.geocode( { 'address': address}, function(results, status) {
+
+                    if (status == google.maps.GeocoderStatus.OK) {
+                        var latitude = results[0].geometry.location.lat();
+                        var longitude = results[0].geometry.location.lng();
+                        //alert(latitude);
+                        document.getElementById('geo_txt').value = latitude + ',' + longitude;
+                    } 
+                }); 
+            }
+        </script>
+
+
+    </head>
+
+    <body>
+        Input:<input type="text" id="txt_location" placeholder="Enter Location"/>
+        Output:<input type="text" id="geo_txt"/>
+        <input type="button" id="btn1" value="Click" onClick="getAddress()"/>
+    </body>
+</html>

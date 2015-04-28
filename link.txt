@@ -1,0 +1,46 @@
+namespace="http://service.opr.com/"
+
+
+http://localhost:8084/OnlinePlotRental/OprWebService?wsdl
+
+
+ public String doLogin(@WebParam(name = "username") String username, @WebParam(name = "password") String password
+
+ public String updateGcmKey(@WebParam(name = "username") String username, @WebParam(name = "key") String key)
+
+ public String doRegister(@WebParam(name = "regParam") String regParam)
+
+
+API KEY : AIzaSyBcJj9lOY1dmQ8MOmC7v6UJSgNK_QIiKO0
+
+
+
+12B SkyLine
+17 Avenue Street
+10th North Cross Road
+
+
+city, prop_type, max_price, beds, for_sale
+
+http://localhost:8084/OnlinePlotRental/PropertyFetchingServlet?property_type=SINGLE_HOUSE&city=Trivandrum&max_amount=500000&no_of_bedrooms=9&contract=For_Sale
+
+
+PropertyFetchingServlet ----> {"property_type":["SINGLE_HOUSE","appartment","villa"],"no_of_bedrooms":"4","contract_type":"For_sale","max_amount":"500000","city":"Trivandrum","type":"building"}
+
+PlotFetchingServlet     ----> {"property_type":["FARM_LAND","ASSOCIATED_LAND","NON_URBAN_LAND","MULTY_STORY_BUILDINGS"],"contract_type":"For_sale","max_amount":"500000","city":"Kochin","type":"plot"}
+
+
+Default Search URL = propType=Any&city=Any&downPrice=150000&maxPrice=550000&beds=Any&baths=Any&area=Any
+
+  {"property_type":["SINGLE_HOUSE","FAMILY_HOUSE"],"no_of_bedrooms":"4","type":"building",
+  "contract_type":"For_sale","max_amount":"500000","city":"Any"}
+
+
+  {"property_type":["ASSOCIATED_LAND","FARM_LAND"],
+  "contract_type":"For_sale","max_amount":"500000","city":"Thrissur","type":"plot"}
+
+   PlotFetchingServlet?json={"property_type":["Any"],
+  "contract_type":"Any","max_amount":"Any","city":"Any","type":"plot"}
+
+
+
